@@ -3,8 +3,8 @@
 
 ## Requierements
 
-Twint
-Python3
+- [Twint](https://github.com/twintproject/twint)
+- Python3
 
 ## How to use
 
