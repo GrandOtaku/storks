@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/home/tsukachou/node_modules/chart.js/dist/chart.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="#">
+                    <li>Mon dashboard</li>
+                </a>
+                <a href="#">
+                    <li>Modifier mon dashboard</li>
+                </a>
+                <a href="#">
+                    <li>Mes infos</li>
+                </a>
+                <a href="#">
+                    <li>Déconnexion</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        </br>
+        </br>
+        </br>
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-4">
+                <h2>Femmes en attentes :</h2>
+                <h3>8</h3>
+            </div>
+            <div class="col-sm-4 border">
+                <h2>Salle de travail disponible : </h2>
+                <h3>18</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-4 top">
+                <h2>Chambres disponible : </h2>
+                <h3>7</h3>
+            </div>
+            <div class="col-sm-4 border top">
+                <h2>Lit disponible dans la pouponnière : </h2>
+                <h3>8</h3>
+            </div>
+        </div>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div class="row">
+            <div class="col-sm-5">
+                <h2>Nombres de naissances depuis 2016</h2>
+                <canvas height="250px" id="myChart"></canvas>
+                <script>
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var chart = new Chart(ctx, {
+                        type: 'line',
+
+                        data: {
+                            labels: ["2016", "2017", "2018", "2019", "2020"],
+                            datasets: [{
+                                label: "Nombre de naissances",
+                                backgroundColor: 'rgb(255, 99, 132)',
+                                borderColor: 'rgb(255, 99, 132)',
+                                data: [744697, 730242, 719737, 714029, 696900],
+                            }]
+                        }
+                    })
+                </script>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <h2>Nombres de naissances par mois depuis 2018</h2>
+                <canvas height="250" id="test"></canvas>
+                <script>
+                    var ctx = document.getElementById('test').getContext('2d');
+                    var chart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                            datasets: [{
+                                label: '2018',
+                                yAxisID: 'A',
+                                data: [59752, 52733, 56391, 55364, 61232, 60292, 64823, 63860, 61834, 63588, 59937, 59931],
+                                backgroundColor: 'rgb(255, 0, 0)',
+                                borderColor: 'rgb(255, 0, 0)',
+                            }, {
+                                label: '2019',
+                                yAxisID: 'B',
+                                data: [59866, 51832, 56592, 55652, 60092, 59768, 64579, 62998, 61515, 62636, 58700, 59799],
+                                backgroundColor: 'rgb(255, 0, 255)',
+                                borderColor: 'rgb(255, 0, 255)',
+                            }, {
+                                label: '2020',
+                                yAxisID: 'C',
+                                data: [59000, 53700, 57700, 54700, 59000, 58500, 62400, 60200, 59700, 60700, 56100, 55300],
+                                backgroundColor: 'rgb(125, 0, 255)',
+                                borderColor: 'rgb(125, 0, 255)',
+                            }]
+                        },
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
