@@ -13,3 +13,4 @@ Just run the command "python3 scrapper.py" All the tweets with the word "materni
 ## Dashboard
 
 You can run index.html in the dashboard folder for an preview of the futur dashboard
+For this you need to install [Chart.js](https://www.chartjs.org/docs/latest/getting-started/integration.html)
